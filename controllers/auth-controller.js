@@ -36,15 +36,19 @@ class AuthController {
         await tokenService.storeRefreshToken(_id,refreshToken);
         res.cookie('accessToken',accessToken,{
             maxAge:1000*60*60*24*30,
-            httpOnly:true
+            httpOnly:true,
+            secure: false,
+            sameSite: "Lax"
         });
         res.cookie('refreshToken',refreshToken,{
             maxAge:1000*60*60*24*30,
-            httpOnly:true
+            httpOnly:true,
+            secure: false,
+            sameSite: "Lax"
         })
 
         console.log(res);
-        res.json({success:true,message:'Login Successfull',user:new UserDto(user)})
+        res.json({success:true,message:'Login Successful',user:new UserDto(user)})
     }
 
     forgot = async (req,res,next) =>

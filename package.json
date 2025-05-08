@@ -1,5 +1,5 @@
 {
-  "name": "targetmanagement",
+  "name": "TeamSync",
   "version": "1.0.0",
   "description": "A system for company to manage their teams, employee and targets",
   "main": "server.js",
@@ -8,7 +8,7 @@
     "start": "npm server.js"
   },
   "keywords": [],
-  "author": "Social Codia",
+  "author": "Ram Deshmukh",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.1.1",
