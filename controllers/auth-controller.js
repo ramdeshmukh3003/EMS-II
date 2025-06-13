@@ -31,8 +31,8 @@ class AuthController {
             type
         }
         const {accessToken,refreshToken} = tokenService.generateToken(payload);
-        console.log("Access Token", accessToken);
-        console.log("Refresh Token", refreshToken);
+        // console.log("Access Token", accessToken);
+        // console.log("Refresh Token", refreshToken);
         await tokenService.storeRefreshToken(_id,refreshToken);
         res.cookie('accessToken',accessToken,{
             maxAge:1000*60*60*24*30,
@@ -47,7 +47,7 @@ class AuthController {
             sameSite: "Lax"
         })
 
-        console.log(res);
+        // console.log(res);
         res.json({success:true,message:'Login Successful',user:new UserDto(user)})
     }
 
@@ -76,7 +76,7 @@ class AuthController {
         const {_id:userId} = user;
         const type = process.env.TYPE_FORGOT_PASSWORD || 2;
         const response = await otpService.verifyOtp(userId,otp,type);
-        console.log("Response",response);
+        // console.log("Response",response);
         if(response==='INVALID') return next(ErrorHandler.badRequest('Invalid OTP'));
         if(response==='EXPIRED') return next(ErrorHandler.badRequest('Otp has been Expired'));
         const {modifiedCount} = await userService.updatePassword(userId,password);

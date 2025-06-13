@@ -29,7 +29,7 @@ async function seedAdmin() {
 
   const existingAdmin = await User.findOne({ email: 'admin@admin.com' });
   if (existingAdmin) {
-    console.log('Admin already exists.');
+    // console.log('Admin already exists.');
     return process.exit(0);
   }
 
@@ -51,11 +51,11 @@ async function seedAdmin() {
   });
 
   await adminUser.save();
-  console.log('✅ Admin seeded successfully.');
+  // console.log('✅ Admin seeded successfully.');
   mongoose.disconnect();
 }
 
 seedAdmin().catch((err) => {
-  console.error('❌ Failed to seed admin:', err);
+  // console.error('❌ Failed to seed admin:', err);
   mongoose.disconnect();
 });

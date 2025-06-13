@@ -80,11 +80,11 @@ class TeamController {
         if(!user) return next(ErrorHandler.notFound('No Leader Found'));
         if(user.type!=='leader') return next(ErrorHandler.badRequest(`${user.name} is not a Leader`));
         const team = await teamService.findTeam({leader:id});
-        console.log(team)
+        // console.log(team)
         if(type==='add' && team) return next(ErrorHandler.badRequest(`${user.name} is already leading '${team.name}' team`));
         if(type==='remove' && !team) return next(ErrorHandler.badRequest(`${user.name} is not leading any team`));
         const update = await teamService.updateTeam(teamId,{leader: type==='add' ? id : null});
-        console.log(type==='add' ? id : null);
+        // console.log(type==='add' ? id : null);
         return update.modifiedCount!==1 ? next(ErrorHandler.serverError(`Failed To ${type.charAt(0).toUpperCase() + type.slice(1)} Leader`)) : res.json({success:true,message:`${type==='add'? 'Added' : 'Removed'} Successfully ${user.name} As A Leader`})
     }
 

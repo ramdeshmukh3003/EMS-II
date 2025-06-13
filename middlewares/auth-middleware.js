@@ -16,10 +16,10 @@ const auth = async (req,res,next) =>
     }
     catch(e)
     {
-        console.log('Token Error');
+        // console.log('Token Error');
         if(e instanceof TokenExpiredError)
         {
-            console.log('Trying To Generate New Token');
+            // console.log('Trying To Generate New Token');
             if(!refreshTokenFromCookie) return next(ErrorHandler.unAuthorized());
                 const userData = await tokenService.verifyRefreshToken(refreshTokenFromCookie);
                 const {_id,email,username,type} = userData;
@@ -46,7 +46,7 @@ const auth = async (req,res,next) =>
                     maxAge:1000*60*60*24*30,
                     // httpOnly:true
                 })
-                console.log('Token Generated Success');
+                // console.log('Token Generated Success');
                     return next();
             }
         else

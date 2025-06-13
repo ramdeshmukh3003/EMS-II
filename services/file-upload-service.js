@@ -3,7 +3,7 @@ const multer = require('multer');
 const storageEngine = multer.diskStorage({
     destination:(req,file,cb) =>
     {
-        console.log('Multer Storage Engine');
+        // console.log('Multer Storage Engine');
         if(file.fieldname==='profile')
             cb(null,'./storage/images/profile/')
         else if(file.fieldname==='image')
@@ -20,11 +20,11 @@ const storageEngine = multer.diskStorage({
 
 
 const fileFilter = (req,file,cb) =>{
-    console.log('File Filter Method Called');
-    console.log('Logging File '+file);
+    // console.log('File Filter Method Called');
+    // console.log('Logging File '+file);
     if(file === 'undefined')
     {
-        console.log('undefined hai')
+        // console.log('undefined hai')
         cb(null,false);
     }
     else if(file.fieldname==='image')

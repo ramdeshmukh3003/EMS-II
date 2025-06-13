@@ -18,7 +18,7 @@ const app = express();
 dbConnection();
 
 const {CLIENT_URL} = process.env;
-console.log(CLIENT_URL);
+// console.log(CLIENT_URL);
 
 //Cors Option
 const corsOption = {

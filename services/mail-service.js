@@ -23,8 +23,8 @@ class MailService{
 
         await transport.sendMail(mailOption,(err,info)=>
         {
-            console.log(err);
-            console.log(info);
+            // console.log(err);
+            // console.log(info);
         })
 
     }
