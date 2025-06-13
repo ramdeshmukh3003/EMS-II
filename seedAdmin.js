@@ -37,15 +37,15 @@ async function seedAdmin() {
   const hashedPassword = await bcrypt.hash(password, 10);
 
   const adminUser = new User({
-    name: 'Admin',
-    email: 'admin@admin.com',
-    username: 'admin',
+    name: 'Ram',
+    email: 'ram@admin.com',
+    username: 'ram3003admin',
     mobile: '8840532578',
     password: hashedPassword,
     type: 'admin',
     status: 'active',
     image: 'profile-1690973045739-766059788passport_photo.jpg',
-    address: 'Lucknow',
+    address: 'Pune',
     createdAt: new Date(),
     updatedAt: new Date()
   });
