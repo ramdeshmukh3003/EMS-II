@@ -40,11 +40,11 @@ async function seedAdmin() {
     name: 'Ram',
     email: 'ram@admin.com',
     username: 'ram3003admin',
-    mobile: '8840532578',
+    mobile: '9309818029',
     password: hashedPassword,
     type: 'admin',
     status: 'active',
-    image: 'profile-1690973045739-766059788passport_photo.jpg',
+    image: 'https://thumbs.dreamstime.com/b/default-avatar-profile-icon-vector-social-media-user-image-182145777.jpg?w=768',
     address: 'Pune',
     createdAt: new Date(),
     updatedAt: new Date()
